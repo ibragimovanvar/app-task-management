@@ -6,7 +6,7 @@ import lombok.Data;
 @Entity
 @Data
 @MappedSuperclass
-public abstract class AbsLongModel {
+public abstract class LongModel extends MainModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

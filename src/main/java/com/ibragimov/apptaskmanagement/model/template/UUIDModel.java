@@ -2,12 +2,18 @@ package com.ibragimov.apptaskmanagement.model.template;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
+
+import java.util.UUID;
 
 @Entity
 @Data
 @MappedSuperclass
-public abstract class AbsLongModel {
+public abstract class UUIDModel extends MainModel {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(generator = "uuid4")
+    @GenericGenerator(name = "uuid4",strategy = "org.hibernate.id.UUIDGenerator")
+    private UUID id;
+
 }
