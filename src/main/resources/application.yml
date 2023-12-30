@@ -1,0 +1,19 @@
+server:
+  port: 8000
+
+# db configuration
+spring:
+  datasource:
+      url: jdbc:postgresql://localhost:5432/task_management
+      username: aztec
+      password: 123
+
+# hibernate
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+#jwt service
+  jwt:
+    secret: yoursecretkey

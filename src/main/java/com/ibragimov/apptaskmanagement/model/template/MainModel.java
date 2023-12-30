@@ -2,7 +2,7 @@ package com.ibragimov.apptaskmanagement.model.template;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.ibragimov.apptaskmanagement.model.User;
+import com.ibragimov.apptaskmanagement.model.userdetails.User;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

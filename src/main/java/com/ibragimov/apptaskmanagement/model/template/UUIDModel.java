@@ -6,7 +6,6 @@ import org.hibernate.annotations.GenericGenerator;
 
 import java.util.UUID;
 
-@Entity
 @Data
 @MappedSuperclass
 public abstract class UUIDModel extends MainModel {
