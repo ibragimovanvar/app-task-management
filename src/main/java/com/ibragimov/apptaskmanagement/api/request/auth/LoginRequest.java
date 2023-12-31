@@ -15,8 +15,8 @@ import lombok.Setter;
 @Setter
 public class LoginRequest {
 
-    @NotBlank(message = "Please provide a username or email.")
-    private String usernameOrEmail;
+    @NotBlank(message = "Please provide a username.")
+    private String username;
 
     @NotBlank(message = "Please provide a password.")
     @Size(min = 8, max = 65, message = "Your password is of an invalid length.")

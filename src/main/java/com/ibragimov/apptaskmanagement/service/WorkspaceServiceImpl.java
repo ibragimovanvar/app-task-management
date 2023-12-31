@@ -15,6 +15,7 @@ import com.ibragimov.apptaskmanagement.model.workspace.WorkspacePermission;
 import com.ibragimov.apptaskmanagement.model.workspace.WorkspaceRole;
 import com.ibragimov.apptaskmanagement.model.workspace.WorkspaceUser;
 import com.ibragimov.apptaskmanagement.service.template.WorkspaceService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,30 +23,21 @@ import java.sql.Timestamp;
 import java.util.*;
 
 @Service
+@RequiredArgsConstructor
 public class WorkspaceServiceImpl implements WorkspaceService {
 
-    @Autowired
-    private WorkspaceRepository workspaceRepository;
 
-    @Autowired
-    private AttachmentRepository attachmentRepository;
-
-    @Autowired
-    private WorkspaceRoleRepository workspaceRoleRepository;
-
-    @Autowired
-    private WorkspacePermissionRepository workspacePermissionRepository;
-
-    @Autowired
-    private WorkspaceUserRepository workspaceUserRepository;
-
-    @Autowired
-    private UserRepository userRepository;
+    private final WorkspaceRepository workspaceRepository;
+    private final AttachmentRepository attachmentRepository;
+    private final WorkspaceRoleRepository workspaceRoleRepository;
+    private final WorkspacePermissionRepository workspacePermissionRepository;
+    private final WorkspaceUserRepository workspaceUserRepository;
+    private final UserRepository userRepository;
 
     /**
      * @param workspace - workspace, which will be created
-     * @param user - user, who created workspace
-     * what this method does - creates workspace and assigns roles and permissions
+     * @param user      - user, who created workspace
+     *                  what this method does - creates workspace and assigns roles and permissions
      */
 
     private void assignRolesAndPermissions(Workspace workspace, User user) {
@@ -75,8 +67,8 @@ public class WorkspaceServiceImpl implements WorkspaceService {
 
     /**
      * @param workspaceBody - request body, contains workspace name, color and avatar
-     * @param user - current user, which creates workspace
-     * @return  - response with additional data
+     * @param user          - current user, which creates workspace
+     * @return - response with additional data
      * @throws WorkspaceExistException - if workspace with this name already exists
      */
 
@@ -105,7 +97,7 @@ public class WorkspaceServiceImpl implements WorkspaceService {
         additionalData.put("workspaceId", workspace.getId());
 
         // Return response
-        return new ApiResponse( "Workspace successfully created", true, additionalData);
+        return new ApiResponse("Workspace successfully created", true, additionalData);
     }
 
     @Override

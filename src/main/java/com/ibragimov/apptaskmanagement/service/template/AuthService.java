@@ -2,6 +2,7 @@ package com.ibragimov.apptaskmanagement.service.template;
 
 import com.ibragimov.apptaskmanagement.api.request.auth.LoginRequest;
 import com.ibragimov.apptaskmanagement.api.request.auth.RegisterRequest;
+import com.ibragimov.apptaskmanagement.api.response.ApiResponse;
 import com.ibragimov.apptaskmanagement.api.response.AuthResponse;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
